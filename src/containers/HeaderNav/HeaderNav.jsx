@@ -1,16 +1,10 @@
 import React from 'react';
-import {
-	Image,
-	Menu,
-	Form,
-	Input,
-	Icon,
-} from '../../../node_modules/semantic-ui-react';
+import { Image, Menu, Form, Input, Icon } from 'semantic-ui-react';
 
 import logo from '../../assets/images/logo.jpg';
 import './HeaderNav.scss';
 
-export const HeaderNav = () => {
+const HeaderNav = () => {
 	return (
 		<Menu borderless className="top-menu" fixed="top">
 			<Menu.Item header className="logo">
@@ -26,10 +20,18 @@ export const HeaderNav = () => {
 				</Menu.Item>
 				<Menu.Menu position="right">
 					<Menu.Item>
-						<Icon className="header-icon" name="video camera" size="large" />
+						<Icon
+							className="header-icon"
+							name="video camera"
+							size="large"
+						/>
 					</Menu.Item>
 					<Menu.Item>
-						<Icon className="header-icon" name="grid layout" size="large" />
+						<Icon
+							className="header-icon"
+							name="grid layout"
+							size="large"
+						/>
 					</Menu.Item>
 					<Menu.Item>
 						<Icon className="header-icon" name="alarm" size="large" />
@@ -42,3 +44,5 @@ export const HeaderNav = () => {
 		</Menu>
 	);
 };
+
+export default HeaderNav;

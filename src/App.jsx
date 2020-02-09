@@ -1,8 +1,14 @@
-import React from 'react';
-import { HeaderNav } from './containers/HeaderNav/HeaderNav';
+import React, { Fragment } from 'react';
+import HeaderNav from './containers/HeaderNav/HeaderNav';
+import SideBar from './containers/SideBar/SideBar';
 
 function App() {
-	return <HeaderNav />;
+	return (
+		<Fragment>
+			<HeaderNav />
+			<SideBar />
+		</Fragment>
+	);
 }
 
 export default App;
