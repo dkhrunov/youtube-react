@@ -1,10 +1,13 @@
+@import '../../../styles/shared.scss';
+
 .sidebar-item {
-	background: #f5f5f5;
+	background: $white;
+	cursor: pointer;
 
 	span {
 		i.icon {
 			margin-right: 20px;
-			color: #888888;
+			color: $grey;
 		}
 	}
 
@@ -14,7 +17,7 @@
 		}
 
 		i.icon {
-			color: #ff0002;
+			color: $red;
 		}
 	}
 }

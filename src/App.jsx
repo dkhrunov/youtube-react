@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import HeaderNav from './containers/HeaderNav/HeaderNav';
 import SideBar from './containers/SideBar/SideBar';
+import './styles/main.scss';
 
 function App() {
 	return (
