@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home renders without props 1`] = `
+<Fragment>
+  <SideBar />
+  <div
+    className="home"
+  >
+    <div
+      className="responsive-video-grid-container"
+    >
+      <VideoGrid
+        title="Trending"
+      />
+      <VideoGrid
+        hideDivider={true}
+        title="Autos & Vencles"
+      />
+    </div>
+  </div>
+</Fragment>
+`;

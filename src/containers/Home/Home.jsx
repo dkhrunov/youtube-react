@@ -1,12 +1,19 @@
-import React from 'react';
-import VideoPreview from '../../components/VideoPreview/VideoPreview';
+import React, { Fragment } from 'react';
+import SideBar from '../SideBar/SideBar';
+import VideoGrid from '../../components/VideoGrid/VideoGrid';
 import './Home.scss';
 
 const Home = (props) => {
 	return (
-		<div className='home'>
-			<VideoPreview />
-		</div>
+		<Fragment>
+			<SideBar />
+			<div className='home'>
+				<div className='responsive-video-grid-container'>
+					<VideoGrid title='Trending' />
+					<VideoGrid title='Autos & Vencles' hideDivider={true} />
+				</div>
+			</div>
+		</Fragment>
 	);
 };
 
