@@ -1,13 +1,13 @@
 #!/bin/bash/
 
 # This script creates components in the src directory 
-# depending on whether it is stateless or statefull (component or container, component or presentation).
+# depending on whether it is stateless or stateful (component or container, component or presentation).
 # for stateless components, the script places the component in the ./src/components directory.
-# And for statefull in the ./src/containers directory.
+# And for stateful in the ./src/containers directory.
 # Requeries librarys: React, Enzyme
 # Will make working with react-create-app
 
-
+# Create and fill .jsx React component file
 function makeAndFillReactComponentFile {
 	path=$1
 	componentName=$2
@@ -16,6 +16,7 @@ function makeAndFillReactComponentFile {
 	fillReactComponentFile "$path" "$componentName"
 }
 
+# Write code into .jsx React component file
 function fillReactComponentFile {
 	path=$1
 	componentName=$2
@@ -28,6 +29,7 @@ function fillReactComponentFile {
 	echo "export default $componentName;" >> $path
 }
 
+# Create and fill .unit.test.js test file
 function makeAndFillTestFile {
 	path=$1
 	componentName=$2
@@ -36,6 +38,7 @@ function makeAndFillTestFile {
 	fillTestFile "$path" "$componentName"
 }
 
+# Write code into .unit.test.js test file
 function fillTestFile {
 	path=$1
 	componentName=$2
@@ -52,13 +55,10 @@ function fillTestFile {
 	echo "});" >> $path
 }
 
-echo "Statefull:"
-read statefull
+# Create structure stateful component
+function makestatefulComponent {
+	componentName=$1
 
-echo "Input name for component:"
-read componentName
-
-if [[ $statefull == 'y' || $statefull == 'yes' || $statefull == true ]]; then
 	mkdir ../src/containers/$componentName
 	mkdir ../src/containers/$componentName/__tests__
 
@@ -67,7 +67,12 @@ if [[ $statefull == 'y' || $statefull == 'yes' || $statefull == true ]]; then
 	touch ../src/containers/$componentName/$componentName.scss
 
 	makeAndFillTestFile "../src/containers/$componentName/__tests__/$componentName.unit.test.js" "$componentName"
-else
+}
+
+# Create structure stateless component
+function makeStatelessComponent {
+	componentName=$1
+
 	mkdir ../src/components/$componentName
 	mkdir ../src/components/$componentName/__tests__
 
@@ -76,4 +81,16 @@ else
 	touch ../src/components/$componentName/$componentName.scss
 
 	makeAndFillTestFile "../src/components/$componentName/__tests__/$componentName.unit.test.js" "$componentName"
+}
+
+echo "Stateful? Answer yes(y) or no(n) :"
+read stateful
+
+echo "Input name for component :"
+read componentName
+
+if [[ $stateful == 'y' || $stateful == 'yes' || $stateful == true ]]; then
+	makestatefulComponent "$componentName"
+else
+	makeStatelessComponent "$componentName"
 fi
