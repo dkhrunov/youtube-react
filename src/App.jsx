@@ -1,14 +1,13 @@
-import React, { Fragment } from 'react';
-import HeaderNav from './containers/HeaderNav/HeaderNav';
+import React from 'react';
 import Home from './containers/Home/Home';
+import AppLayout from './components/AppLayout/AppLayout';
 import './styles/main.scss';
 
 function App() {
 	return (
-		<Fragment>
-			<HeaderNav />
+		<AppLayout>
 			<Home />
-		</Fragment>
+		</AppLayout>
 	);
 }
 
