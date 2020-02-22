@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders VideoMetadata component renders with view count 1`] = `
+<div
+  className="video-metadata"
+>
+  <h3>
+    Video title
+  </h3>
+  <div
+    className="video-stats"
+  >
+    <span>
+      100,234
+       views
+    </span>
+    <div
+      className="video-actions"
+    >
+      <Rating
+        dislikeCount={100}
+        likeCount={1000}
+      />
+      <Button
+        as="button"
+        basic={true}
+        icon={true}
+        lavelPosition="left"
+      >
+        <Icon
+          as="i"
+          name="share"
+        />
+        Share
+      </Button>
+      <Button
+        as="button"
+        basic={true}
+        icon={true}
+      >
+        <Icon
+          as="i"
+          name="add circle"
+        />
+      </Button>
+      <Button
+        as="button"
+        basic={true}
+        icon={true}
+      >
+        <Icon
+          as="i"
+          name="ellipsis horizontal"
+        />
+      </Button>
+    </div>
+  </div>
+  <Divider />
+</div>
+`;
+
+exports[`Renders VideoMetadata component renders without props 1`] = `
+<div
+  className="video-metadata"
+>
+  <h3>
+    Video title
+  </h3>
+  <div
+    className="video-stats"
+  >
+    <span>
+      0
+       views
+    </span>
+    <div
+      className="video-actions"
+    >
+      <Rating
+        dislikeCount={100}
+        likeCount={1000}
+      />
+      <Button
+        as="button"
+        basic={true}
+        icon={true}
+        lavelPosition="left"
+      >
+        <Icon
+          as="i"
+          name="share"
+        />
+        Share
+      </Button>
+      <Button
+        as="button"
+        basic={true}
+        icon={true}
+      >
+        <Icon
+          as="i"
+          name="add circle"
+        />
+      </Button>
+      <Button
+        as="button"
+        basic={true}
+        icon={true}
+      >
+        <Icon
+          as="i"
+          name="ellipsis horizontal"
+        />
+      </Button>
+    </div>
+  </div>
+  <Divider />
+</div>
+`;
