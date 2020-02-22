@@ -15,7 +15,7 @@ exports[`Renders NextUpVideo component renders 1`] = `
         Autoplay
       </span>
       <Checkbox
-        defaultCheked={true}
+        defaultChecked={true}
         toggle={true}
         type="checkbox"
       />

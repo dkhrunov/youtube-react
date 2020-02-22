@@ -6,6 +6,7 @@
 		content: '';
 		display: block;
 		padding-top: 56.25%; // 9 / 16 in percent (16:9 resolution)
+		min-height: 480px; // better solutionf
 	}
 
 	.video {
