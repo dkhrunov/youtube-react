@@ -6,6 +6,7 @@
 # And for stateful in the ./src/containers directory.
 # Requeries librarys: React, Enzyme
 # Will make working with react-create-app
+# This script shiuld placed to <project-name>/bin/
 
 # Create and fill .jsx React component file
 function makeAndFillReactComponentFile {
@@ -13,7 +14,7 @@ function makeAndFillReactComponentFile {
 	componentName=$2
 
 	touch $path
-	fillReactComponentFile "$path" "$componentName"
+	fillReactComponentFile $path $componentName
 }
 
 # Write code into .jsx React component file
@@ -35,7 +36,7 @@ function makeAndFillTestFile {
 	componentName=$2
 
 	touch $path
-	fillTestFile "$path" "$componentName"
+	fillTestFile $path $componentName
 }
 
 # Write code into .unit.test.js test file
@@ -55,42 +56,80 @@ function fillTestFile {
 	echo "});" >> $path
 }
 
+function findComponentFolderByName {
+	catalogName=$1
+	find ../src/ -name $catalogName
+}
+
 # Create structure stateful component
-function makestatefulComponent {
+function makeStatefulComponent {
 	componentName=$1
+	parentComponentName=$2
 
-	mkdir ../src/containers/$componentName
-	mkdir ../src/containers/$componentName/__tests__
+	if [[ $parentComponentName ]]; then
+		mkdir ../src/containers/$parentComponentName/$componentName
+		mkdir ../src/containers/$parentComponentName/$componentName/__tests__
 
-	makeAndFillReactComponentFile "../src/containers/$componentName/$componentName.jsx" "$componentName"
+		makeAndFillReactComponentFile "../src/containers/$parentComponentName/$componentName/$componentName.jsx" "$componentName"
 
-	touch ../src/containers/$componentName/$componentName.scss
+		touch ../src/containers/$parentComponentName/$componentName/$componentName.scss
 
-	makeAndFillTestFile "../src/containers/$componentName/__tests__/$componentName.unit.test.js" "$componentName"
+		makeAndFillTestFile "../src/containers/$parentComponentName/$componentName/__tests__/$componentName.unit.test.js" "$componentName"
+	else
+		mkdir ../src/containers/$componentName
+		mkdir ../src/containers/$componentName/__tests__
+
+		makeAndFillReactComponentFile "../src/containers/$componentName/$componentName.jsx" "$componentName"
+
+		touch ../src/containers/$componentName/$componentName.scss
+
+		makeAndFillTestFile "../src/containers/$componentName/__tests__/$componentName.unit.test.js" "$componentName"
+	fi
+
 }
 
 # Create structure stateless component
 function makeStatelessComponent {
 	componentName=$1
+	parentComponentName=$2
 
-	mkdir ../src/components/$componentName
-	mkdir ../src/components/$componentName/__tests__
+	if [[ $parentComponentName ]]; then
+		mkdir ../src/components/$parentComponentName/$componentName
+		mkdir ../src/components/$parentComponentName/$componentName/__tests__
 
-	makeAndFillReactComponentFile "../src/components/$componentName/$componentName.jsx" "$componentName"
+		makeAndFillReactComponentFile "../src/components/$parentComponentName/$componentName/$componentName.jsx" "$componentName"
 
-	touch ../src/components/$componentName/$componentName.scss
+		touch ../src/components/$parentComponentName/$componentName/$componentName.scss
 
-	makeAndFillTestFile "../src/components/$componentName/__tests__/$componentName.unit.test.js" "$componentName"
+		makeAndFillTestFile "../src/components/$parentComponentName/$componentName/__tests__/$componentName.unit.test.js" "$componentName"
+	else
+		mkdir ../src/components/$componentName
+		mkdir ../src/components/$componentName/__tests__
+
+		makeAndFillReactComponentFile "../src/components/$componentName/$componentName.jsx" "$componentName"
+
+		touch ../src/components/$componentName/$componentName.scss
+
+		makeAndFillTestFile "../src/components/$componentName/__tests__/$componentName.unit.test.js" "$componentName"
+	fi
 }
 
-echo "Stateful? Answer yes(y) or no(n) :"
-read stateful
+# Here start programm
+function main {
+	echo "Stateful? Answer yes(-y) or no(-n):"
+	read stateful
 
-echo "Input name for component :"
-read componentName
+	echo "Parent component name (Press Enter if haven\`t parent component):"
+	read parentComponent
 
-if [[ $stateful == 'y' || $stateful == 'yes' || $stateful == true ]]; then
-	makestatefulComponent "$componentName"
-else
-	makeStatelessComponent "$componentName"
-fi
+	echo "Input name for component:"
+	read componentName
+
+	if [[ $stateful == 'y' || $stateful == 'yes' || $stateful == true ]]; then
+		makeStatefulComponent $componentName $parentComponent
+	else
+		makeStatelessComponent $componentName $parentComponent
+	fi
+}
+
+main

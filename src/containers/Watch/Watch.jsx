@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import './Watch.scss';
 import Video from '../../components/Video/Video';
-import VideoPreview from '../../components/VideoPreview/VideoPreview';
+import RelatedVideos from '../../components/RelatedVideos/RelatedVideos';
 
 const Watch = (props) => {
 	return (
@@ -9,8 +9,7 @@ const Watch = (props) => {
 			<div style={{ maxWidth: '80%' }}>
 				<Video id='-7fuHEEmEjs' />
 			</div>
-			<VideoPreview horizontal={true} />
-			<VideoPreview />
+			<RelatedVideos />
 		</Fragment>
 	);
 };
