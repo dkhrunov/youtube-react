@@ -12,18 +12,9 @@ exports[`Renders NextUpVideo component renders 1`] = `
     className="metadata"
     viewCount={1000}
   />
-  <div
+  <VideoInfoBox
     className="video-info-box"
-    style={
-      Object {
-        "background": "#BD10E0",
-        "height": "100px",
-        "width": "100%",
-      }
-    }
-  >
-    Video Info box
-  </div>
+  />
   <div
     className="comments"
     style={

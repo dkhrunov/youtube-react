@@ -1,0 +1,313 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders VideoInfoBox component renders collapsed 1`] = `
+<div
+  className="video-info-box"
+>
+  <Image
+    as="img"
+    circular={true}
+    className="channek-image"
+    src="http://via.placeholder.com/48x48"
+    ui={true}
+  />
+  <div
+    className="video-info"
+  >
+    <div
+      className="channel-name"
+    >
+      Channel Name
+    </div>
+    <div
+      className="video-publication-date"
+    >
+      Thu 24, 2018
+    </div>
+  </div>
+  <Button
+    as="button"
+    color="youtube"
+  >
+    91.5k Subscribe
+  </Button>
+  <div
+    className="video-description"
+  >
+    <div
+      className="collapsed"
+    >
+      <p>
+        Paragraph 1
+      </p>
+      <p>
+        Paragraph 2
+      </p>
+      <p>
+        Paragraph 3
+      </p>
+      <p>
+        Paragraph 4
+      </p>
+      <p>
+        Paragraph 5
+      </p>
+    </div>
+    <Button
+      as="button"
+      compact={true}
+      onClick={[Function]}
+    >
+      Show More
+    </Button>
+  </div>
+</div>
+`;
+
+exports[`Renders VideoInfoBox component renders collapsed comments block 1`] = `
+<div
+  className="video-info-box"
+>
+  <Image
+    as="img"
+    circular={true}
+    className="channek-image"
+    src="http://via.placeholder.com/48x48"
+    ui={true}
+  />
+  <div
+    className="video-info"
+  >
+    <div
+      className="channel-name"
+    >
+      Channel Name
+    </div>
+    <div
+      className="video-publication-date"
+    >
+      Thu 24, 2018
+    </div>
+  </div>
+  <Button
+    as="button"
+    color="youtube"
+  >
+    91.5k Subscribe
+  </Button>
+  <div
+    className="video-description"
+  >
+    <div
+      className="collapsed"
+    >
+      <p>
+        Paragraph 1
+      </p>
+      <p>
+        Paragraph 2
+      </p>
+      <p>
+        Paragraph 3
+      </p>
+      <p>
+        Paragraph 4
+      </p>
+      <p>
+        Paragraph 5
+      </p>
+    </div>
+    <Button
+      as="button"
+      compact={true}
+      onClick={[Function]}
+    >
+      Show More
+    </Button>
+  </div>
+</div>
+`;
+
+exports[`Renders VideoInfoBox component renders expanded 1`] = `
+<div
+  className="video-info-box"
+>
+  <img
+    className="ui circular image channek-image"
+    src="http://via.placeholder.com/48x48"
+  />
+  <div
+    className="video-info"
+  >
+    <div
+      className="channel-name"
+    >
+      Channel Name
+    </div>
+    <div
+      className="video-publication-date"
+    >
+      Thu 24, 2018
+    </div>
+  </div>
+  <button
+    className="ui youtube button"
+    onClick={[Function]}
+  >
+    91.5k Subscribe
+  </button>
+  <div
+    className="video-description"
+  >
+    <div
+      className="expanded"
+    >
+      <p>
+        Paragraph 1
+      </p>
+      <p>
+        Paragraph 2
+      </p>
+      <p>
+        Paragraph 3
+      </p>
+      <p>
+        Paragraph 4
+      </p>
+      <p>
+        Paragraph 5
+      </p>
+    </div>
+    <button
+      className="ui compact button"
+      onClick={[Function]}
+    >
+      Show Less
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Renders VideoInfoBox component renders expanded comments block 1`] = `
+<div
+  className="video-info-box"
+>
+  <img
+    className="ui circular image channek-image"
+    src="http://via.placeholder.com/48x48"
+  />
+  <div
+    className="video-info"
+  >
+    <div
+      className="channel-name"
+    >
+      Channel Name
+    </div>
+    <div
+      className="video-publication-date"
+    >
+      Thu 24, 2018
+    </div>
+  </div>
+  <button
+    className="ui youtube button"
+    onClick={[Function]}
+  >
+    91.5k Subscribe
+  </button>
+  <div
+    className="video-description"
+  >
+    <div
+      className="expanded"
+    >
+      <p>
+        Paragraph 1
+      </p>
+      <p>
+        Paragraph 2
+      </p>
+      <p>
+        Paragraph 3
+      </p>
+      <p>
+        Paragraph 4
+      </p>
+      <p>
+        Paragraph 5
+      </p>
+    </div>
+    <button
+      className="ui compact button"
+      onClick={[Function]}
+    >
+      Show Less
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Renders VideoInfoBox component renders: collapsed comments block 1`] = `
+<div
+  className="video-info-box"
+>
+  <Image
+    as="img"
+    circular={true}
+    className="channek-image"
+    src="http://via.placeholder.com/48x48"
+    ui={true}
+  />
+  <div
+    className="video-info"
+  >
+    <div
+      className="channel-name"
+    >
+      Channel Name
+    </div>
+    <div
+      className="video-publication-date"
+    >
+      Thu 24, 2018
+    </div>
+  </div>
+  <Button
+    as="button"
+    color="youtube"
+  >
+    91.5k Subscribe
+  </Button>
+  <div
+    className="video-description"
+  >
+    <div
+      className="collapsed"
+    >
+      <p>
+        Paragraph 1
+      </p>
+      <p>
+        Paragraph 2
+      </p>
+      <p>
+        Paragraph 3
+      </p>
+      <p>
+        Paragraph 4
+      </p>
+      <p>
+        Paragraph 5
+      </p>
+    </div>
+    <Button
+      as="button"
+      compact={true}
+      onClick={[Function]}
+    >
+      Show More
+    </Button>
+  </div>
+</div>
+`;
