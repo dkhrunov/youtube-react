@@ -1,0 +1,21 @@
+@import '../../../styles/shared.scss';
+
+.add-comment {
+	display: flex;
+	margin-top: 16px;
+	margin-bottom: 16px;
+
+	form {
+		flex: 1;
+
+		textarea {
+			min-height: 80px;
+		}
+	}
+
+	.user-image {
+		width: $avatar-diameter;
+		height: $avatar-diameter;
+		margin-right: $avatar-margin;
+	}
+}

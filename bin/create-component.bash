@@ -8,6 +8,27 @@
 # Will make working with react-create-app
 # This script shiuld placed to <project-name>/bin/
 
+# Success message for user
+function successMessage {
+	message=$1
+
+	echo -e "\e[32m$message\e[0m"
+}
+
+# Error message for user
+function errorMessage {
+	message=$1
+
+	echo -e "\e[31m$message\e[0m"
+}
+
+# Info message for user
+function infoMessage {
+	message=$1
+
+	echo -e "\e[36m$message\e[0m"
+}
+
 # Create and fill .jsx React component file
 function makeAndFillReactComponentFile {
 	path=$1
@@ -116,19 +137,26 @@ function makeStatelessComponent {
 
 # Here start programm
 function main {
-	echo "Stateful? Answer yes(-y) or no(-n):"
-	read stateful
-
-	echo "Parent component name (Press Enter if haven\`t parent component):"
+	infoMessage "Parent component name (Press Enter if haven\`t parent component):"
 	read parentComponent
 
-	echo "Input name for component:"
+	if [[ $parentComponent ]]; then
+		infoMessage "Parent component stateful? Answer yes(-y) or no(-n):"
+		read stateful
+	else
+		infoMessage "Stateful? Answer yes(-y) or no(-n):"
+		read stateful
+	fi
+
+	infoMessage "Enter a name for the new component:"
 	read componentName
 
 	if [[ $stateful == 'y' || $stateful == 'yes' || $stateful == true ]]; then
 		makeStatefulComponent $componentName $parentComponent
+		successMessage "Successfully created \"$componentName\" component!"
 	else
 		makeStatelessComponent $componentName $parentComponent
+		successMessage "Successfully created \"$componentName\" component!"
 	fi
 }
 
