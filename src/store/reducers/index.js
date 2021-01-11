@@ -1,6 +1,6 @@
-export default function (state = {}, action) {
-    switch (action.type) {
-        default:
-            return state;
-    }
-}
+import { combineReducers } from 'redux';
+import apiReducer from './api';
+
+export default combineReducers({
+    api: apiReducer,
+})
